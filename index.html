@@ -29,9 +29,9 @@ nav .wrap{display:flex;align-items:center;gap:20px;min-height:64px}
 nav .brand{display:flex;align-items:center;gap:10px;color:var(--yellow);text-decoration:none}
 nav .brand span{font-family:"Lilita One",sans-serif;font-size:26px;letter-spacing:.02em}
 nav ul{display:flex;gap:2px;list-style:none;margin:0 0 0 auto;padding:0}
-nav li a{display:block;padding:8px 9px;color:var(--white);text-decoration:none;font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:13px}
+nav li a{display:block;white-space:nowrap;padding:8px 9px;color:var(--white);text-decoration:none;font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:13px}
 nav li a:hover{color:var(--yellow)}
-@media (max-width:1100px){nav ul{display:none}}
+@media (max-width:1180px){nav ul{display:none}}
 .status{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;background:var(--yellow);color:var(--ink);font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:12px;border-radius:999px;white-space:nowrap}
 .status i{width:8px;height:8px;border-radius:50%;background:var(--green)}
 .status.closed i{background:var(--red)}
@@ -48,6 +48,7 @@ nav li a:hover{color:var(--yellow)}
 .btn:hover{transform:translateY(-1px)}
 .btn.ghost{background:transparent;color:var(--white);border:2px solid var(--white);box-shadow:none}
 .btn.navy{background:var(--navy);color:var(--white);box-shadow:0 4px 0 #14275e}
+.sum .btn:not(.navy){background:var(--white);color:var(--navy);border:2px solid var(--navy);box-shadow:none}
 .glass{width:100%;max-width:360px;margin:0 auto;display:block}
 .sizes{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.25);margin-top:38px;border-radius:14px;overflow:hidden}
 .sizes div{background:var(--red-deep);padding:16px 18px;text-align:center}
