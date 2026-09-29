@@ -562,7 +562,7 @@ footer a{color:var(--yellow)}
     <div class="rv"><div class="eyebrow">Tre banconi, due città</div>
     <h2>Dove siamo</h2></div>
     <div class="locs" id="locs"></div>
-    <p class="note">Orari di esempio, da confermare con Davide. Nel sito vero lo stato «aperto ora» segue gli orari reali e le aperture straordinarie.</p>
+    <p class="note">Orari confermati da Davide. Nel sito vero lo stato «aperto ora» segue anche le aperture straordinarie e le feste.</p>
   </div>
 </section>
 
@@ -626,14 +626,14 @@ document.getElementById("spGo").onclick=()=>{const s=document.getElementById("sp
   const c=document.getElementById("sospN");c.textContent=+c.textContent+1;toast("Appeso alla lavagna. Nel sito vero: pagamento e ricevuta via email.");say("Che gesto. Grazie! 🧡");};
 // locations
 const LOCS=[
- {city:"Napoli · Vomero",n:"Via Enrico Alvino",a:"Via Enrico Alvino 50, 80129 Napoli",t:"Il primo bancone, dal 2016",h:[17.5,24]},
- {city:"Napoli · Antignano",n:"Largo Antignano",a:"Largo Antignano 1, 80129 Napoli",t:"Il chiosco al mercato, con Il Birrafondaio",h:[17,24]},
- {city:"Torino · San Salvario",n:"Via Baretti",a:"Via Giuseppe Baretti, 10125 Torino · numero civico da confermare",t:"Lo stesso bancone, sotto la Mole",h:[18,24]},
+ {city:"Napoli · Vomero",n:"Via Enrico Alvino",a:"Via Enrico Alvino 50, 80129 Napoli",t:"Il primo bancone, dal 2016",h:[17,26]},
+ {city:"Napoli · Antignano",n:"Largo Antignano",a:"Largo Antignano 1, 80129 Napoli",t:"Il chiosco al mercato, con Il Birrafondaio",h:[17,25]},
+ {city:"Torino · San Salvario",n:"Via Baretti",a:"Via Giuseppe Baretti, 10125 Torino · numero civico da confermare",t:"Lo stesso bancone, sotto la Mole",h:[17,26]},
 ];
 const hh=x=>`${String(Math.floor(x%24)).padStart(2,"0")}:${String(Math.round((x%1)*60)).padStart(2,"0")}`;
-const cur=now.getHours()+now.getMinutes()/60;let anyOpen=false;
+const cur0=now.getHours()+now.getMinutes()/60;const cur=cur0<6?cur0+24:cur0;let anyOpen=false;
 document.getElementById("locs").innerHTML=LOCS.map(l=>{const open=cur>=l.h[0]&&cur<l.h[1];anyOpen=anyOpen||open;
-  return `<div class="loc rv${open?" open":""}"><div class="city">${l.city}</div><h3>${l.n}</h3><div class="addr">${l.a}</div><div style="font-size:14px;color:var(--ink-soft)">${l.t}</div><div class="hrs">Oggi ${hh(l.h[0])} – ${hh(l.h[1])}</div><button data-toast="Nel sito vero: apre le mappe con il percorso">Indicazioni</button></div>`}).join("");
+  return `<div class="loc rv${open?" open":""}"><div class="city">${l.city}</div><h3>${l.n}</h3><div class="addr">${l.a}</div><div style="font-size:14px;color:var(--ink-soft)">${l.t}</div><div class="hrs">Tutti i giorni ${hh(l.h[0])} – ${hh(l.h[1])}</div><button data-toast="Nel sito vero: apre le mappe con il percorso">Indicazioni</button></div>`}).join("");
 const s=document.getElementById("status");s.classList.toggle("closed",!anyOpen);document.getElementById("statusText").textContent=anyOpen?"Aperto ora":"Apriamo alle 17";
 document.querySelectorAll("#locs .rv").forEach(el=>io.observe(el));
 let tt;function toast(m){const t=document.getElementById("toast");t.textContent=m;t.classList.add("show");clearTimeout(tt);tt=setTimeout(()=>t.classList.remove("show"),3200);}
