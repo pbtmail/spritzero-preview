@@ -67,11 +67,11 @@ nav li a:hover{color:var(--yellow)}
 .btn.navy{background:var(--navy);color:var(--white);box-shadow:0 4px 0 var(--navy-deep)}
 .btn.ghost{background:transparent;color:var(--navy);border:2px solid var(--navy);box-shadow:none}
 .btn.yellow{background:var(--yellow);color:var(--navy);box-shadow:0 4px 0 var(--yellow-deep)}
-.mascot-wrap{position:relative;display:grid;grid-template-columns:1fr;justify-items:end}
-.hero-logo{width:100%;background:var(--red);border-radius:26px;padding:40px 34px;box-shadow:14px 14px 0 var(--navy);transform:rotate(-2deg)}
+.mascot-wrap{position:relative;display:grid;grid-template-columns:1fr;justify-items:end;padding-bottom:70px}
+.hero-logo{width:100%;background:var(--red);border-radius:26px;padding:40px 34px 170px;box-shadow:14px 14px 0 var(--navy);transform:rotate(-2deg)}
 .hero-logo svg{width:100%;height:auto;display:block}
-.mascot{width:200px;height:auto;margin:-28px 24px 0 0;filter:drop-shadow(8px 10px 0 rgba(19,55,93,.22));animation:bob 4.2s ease-in-out infinite;transform-origin:50% 100%;position:relative;z-index:1}
-@media (max-width:820px){.mascot{width:160px;margin-right:12px}}
+.mascot{position:absolute;right:6%;bottom:0;width:min(300px,60%);height:auto;filter:drop-shadow(8px 10px 0 rgba(19,55,93,.25));animation:bob 4.2s ease-in-out infinite;transform-origin:50% 100%;z-index:1}
+@media (max-width:820px){.hero-logo{padding-bottom:130px}.mascot{width:220px;right:4%}}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 .mascot .blink{animation:blink 5s infinite}
 @keyframes blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.08)}}
@@ -342,16 +342,19 @@ footer a{color:var(--yellow)}
           <button class="opt" aria-pressed="true" data-v="M" data-p="4">M <small>4,00 €</small></button>
           <button class="opt" aria-pressed="false" data-v="XXL" data-p="6">XXL <small>6,00 €</small></button>
         </div>
-        <h3 style="margin-top:18px">2 · La base</h3>
+        <h3 style="margin-top:18px">2 · La base <span style="font-size:14px;color:var(--red);font-family:Nunito,sans-serif;font-weight:800">special: +0,50 € sulla S, +1 € su M e XXL</span></h3>
         <div class="opts" data-g="base">
           <button class="opt" aria-pressed="true" data-v="Aperol" data-p="0">Aperol <small>il classico</small></button>
-          <button class="opt" aria-pressed="false" data-v="Campari" data-p="1">Campari <small>special · +1 €</small></button>
-          <button class="opt" aria-pressed="false" data-v="Hugo" data-p="1">Hugo <small>special · +1 €</small></button>
-          <button class="opt" aria-pressed="false" data-v="Sbagliato" data-p="1">Sbagliato <small>special · +1 €</small></button>
-          <button class="opt" aria-pressed="false" data-v="Cynar" data-p="1">Cynar <small>special · +1 €</small></button>
-          <button class="opt" aria-pressed="false" data-v="Napoli" data-p="1">Napoli <small>special · +1 €</small></button>
-          <button class="opt" aria-pressed="false" data-v="San Gennaro" data-p="1">San Gennaro <small>special · +1 €</small></button>
-          <button class="opt" aria-pressed="false" data-v="Limoncello" data-p="1">Limoncello <small>special · +1 €</small></button>
+          <button class="opt" aria-pressed="false" data-v="Campari" data-p="1">Campari <small>special</small></button>
+          <button class="opt" aria-pressed="false" data-v="Hugo" data-p="1">Hugo <small>special</small></button>
+          <button class="opt" aria-pressed="false" data-v="Sbagliato" data-p="1">Sbagliato <small>special</small></button>
+          <button class="opt" aria-pressed="false" data-v="Cynar" data-p="1">Cynar <small>special</small></button>
+          <button class="opt" aria-pressed="false" data-v="Napoli" data-p="1">Napoli <small>special</small></button>
+          <button class="opt" aria-pressed="false" data-v="San Gennaro" data-p="1">San Gennaro <small>special</small></button>
+          <button class="opt" aria-pressed="false" data-v="Limoncello" data-p="1">Limoncello <small>special</small></button>
+          <button class="opt" aria-pressed="false" data-v="White (Red Bull)" data-p="1">White <small>Red Bull · special</small></button>
+          <button class="opt" aria-pressed="false" data-v="Apricot (Red Bull)" data-p="1">Apricot <small>Red Bull · special</small></button>
+          <button class="opt" aria-pressed="false" data-v="Blue (Red Bull)" data-p="1">Blue <small>Red Bull · special</small></button>
         </div>
         <h3 style="margin-top:18px">3 · Con o senza</h3>
         <div class="opts" data-g="extra">
@@ -378,7 +381,7 @@ footer a{color:var(--yellow)}
   <div class="wrap">
     <div class="rv"><div class="eyebrow">Semplice per scelta</div>
     <h2>Menù</h2>
-    <p class="sub">Paghi lo spritz in base alla taglia. Gli special costano un euro in più, in qualsiasi taglia.</p></div>
+    <p class="sub">Paghi lo spritz in base alla taglia. Gli special: 3 € la S, 5 € la M, 7 € la XXL.</p></div>
     <div class="conf" style="align-items:stretch">
       <div class="card rv">
         <div class="sizes" style="margin-top:0">
@@ -389,7 +392,7 @@ footer a{color:var(--yellow)}
         <div style="margin-top:22px"><span class="badge">Bicchiere compostabile EN 13432 · #plasticfree</span></div>
       </div>
       <div class="card rv">
-        <div class="special-t">Special<small>Con solo 1 euro in più</small></div>
+        <div class="special-t">Special<small>S 3 € · M 5 € · XXL 7 €</small></div>
         <ul class="speclist">
           <li>Vodka &amp; Red Bull<b>+1</b></li><li>Jäger Bomb<b>+1</b></li>
           <li>Tequila &amp; Fizzy Peach<b>+1</b></li><li>Gin Tonic<b>+1</b></li>
@@ -401,14 +404,13 @@ footer a{color:var(--yellow)}
       </div>
     </div>
     <div class="card rv" style="margin-top:24px">
-      <h3>Red Bull Spritz</h3>
+      <h3>Red Bull Spritz <span style="font-size:15px;color:var(--red)">prezzo special: S 3 € · M 5 € · XXL 7 €</span></h3>
       <div class="cans">
         <div class="can"><svg style="--c:#F2F2F2"><use href="#can"/></svg><b>White Spritz</b><span>Red Bull White Edition<br>Amaretto Disaronno</span></div>
         <div class="can"><svg style="--c:#F7A23B"><use href="#can"/></svg><b>Apricot Spritz</b><span>Red Bull Apricot Edition<br>Vodka liscia</span></div>
         <div class="can"><svg style="--c:#3B6FD6"><use href="#can"/></svg><b>Blue Spritz</b><span>Red Bull Juneberry Edition<br>Rum scuro</span></div>
       </div>
-      <p class="note">Prezzo Red Bull Spritz da confermare con Davide.</p>
-    </div>
+          </div>
     <div class="slogan rv"><svg viewBox="0 0 120 170" style="height:110px;width:auto"><use href="#cup"/></svg><div class="script">Non abbiamo inventato lo spritz,<b>l'abbiamo reso vincente.</b></div></div>
   </div>
 </section>
@@ -590,14 +592,15 @@ document.querySelectorAll(".rv").forEach(el=>{const r=el.getBoundingClientRect()
     ps.forEach((p,i)=>{p.setAttribute("cx",eyes[i][0]+dx/d*k);p.setAttribute("cy",eyes[i][1]+dy/d*k);});});})();
 // configurator
 const sel={size:{v:"M",p:4},base:{v:"Aperol",p:0},extra:{v:"Con alcol",p:0}};
+const surcharge=()=>sel.base.p?(sel.size.v==="S"?0.5:1):0;
 const fill={S:.6,M:.8,XXL:1};
 const fmt=v=>v.toFixed(2).replace(".",",");
 const say=()=>{};
-function upd(){const total=sel.size.p+sel.base.p+sel.extra.p;
+function upd(){const total=sel.size.p+surcharge()+sel.extra.p;
   document.getElementById("sName").textContent=`${sel.base.v} Spritz ${sel.size.v}`;
   const pr=document.getElementById("sPrice");pr.innerHTML=`${fmt(total)} <small>€</small>`;pr.classList.remove("bump");void pr.offsetWidth;pr.classList.add("bump");
   const lvl=document.querySelector("#miniCup use");const mc=document.getElementById("miniCup");mc.style.transform=`scale(${.75+fill[sel.size.v]*.25})`;
-  document.getElementById("sList").innerHTML=`<li>Taglia ${sel.size.v}, ${fmt(sel.size.p)} €</li><li>Base ${sel.base.v}${sel.base.p?" (special, +1 €)":""}</li><li>${sel.extra.v}</li><li>Bicchiere compostabile</li>`;}
+  document.getElementById("sList").innerHTML=`<li>Taglia ${sel.size.v}, ${fmt(sel.size.p)} €</li><li>Base ${sel.base.v}${sel.base.p?` (special, +${surcharge().toFixed(2).replace(".",",")} €)`:""}</li><li>${sel.extra.v}</li><li>Bicchiere compostabile</li>`;}
 document.querySelectorAll(".opts").forEach(g=>g.addEventListener("click",e=>{const b=e.target.closest(".opt");if(!b)return;
   g.querySelectorAll(".opt").forEach(x=>x.setAttribute("aria-pressed","false"));b.setAttribute("aria-pressed","true");
   sel[g.dataset.g]={v:b.dataset.v,p:parseFloat(b.dataset.p)};upd();
