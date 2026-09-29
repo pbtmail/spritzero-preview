@@ -40,7 +40,7 @@ section.navy h2,section.navy .eyebrow{color:var(--yellow)}section.navy p{color:#
 nav{position:sticky;top:0;z-index:20;background:var(--red);border-bottom:4px solid var(--yellow)}
 nav .wrap{display:flex;align-items:center;gap:20px;min-height:64px}
 nav .brand{display:flex;align-items:center;text-decoration:none}
-nav .brand svg{height:44px;width:auto;display:block}
+nav .brand svg{height:56px;width:auto;display:block}
 nav ul{display:flex;gap:2px;list-style:none;margin:0 0 0 auto;padding:0}
 nav li a{display:block;white-space:nowrap;padding:8px 9px;color:var(--white);text-decoration:none;font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:13px}
 nav li a:hover{color:var(--yellow)}
@@ -562,7 +562,7 @@ footer a{color:var(--yellow)}
 
 <script>
 // scroll reveal (elements are visible at rest; only pre-animate those below the fold)
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.remove("pre");io.unobserve(e.target);}}),{threshold:.08});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.remove("pre");io.unobserve(e.target);}}),{threshold:0,rootMargin:"0px 0px -4% 0px"});
 document.querySelectorAll(".rv").forEach(el=>{const r=el.getBoundingClientRect();if(r.top>innerHeight){el.classList.add("pre");}io.observe(el);});
 // bubbles canvas in hero
 (function(){const c=document.getElementById("bubbles"),x=c.getContext("2d");let W,H,B=[];const rm=matchMedia("(prefers-reduced-motion: reduce)").matches;
