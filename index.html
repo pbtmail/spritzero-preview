@@ -524,13 +524,12 @@ footer a{color:var(--yellow)}
     <h2>Dieci anni, grazie a voi</h2>
     <p class="sub" style="color:#D6E0F0">Dieci anni fa un'idea semplice: lo spritz non deve costare come un cocktail, e ognuno lo beve nella taglia che vuole. Oggi tre banconi, due città, una formula.</p></div>
     <div class="tl">
-      <div class="yr rv"><div class="y">2016</div><b>Il primo bancone</b><p>Napoli, Vomero, Via Enrico Alvino. Tre taglie, un prezzo chiaro. Nasce la Spritzeria su misura.</p></div>
-      <div class="yr rv"><div class="y">Poi</div><b>Il chiosco al mercato</b><p>Largo Antignano. Il chiosco che oggi divide la piazza con Il Birrafondaio.</p></div>
-      <div class="yr rv"><div class="y">Poi</div><b>Torino, Via Baretti</b><p>Lo stesso bancone, la stessa formula, a San Salvario.</p></div>
-      <div class="yr rv"><div class="y">2026</div><b>Dieci candeline</b><p>Grazie a voi. Dieci anni di S, M e XXL.</p></div>
+      <div class="yr rv"><div class="y">2016</div><b>Il primo bancone</b><p>Napoli, Largo Antignano, il chiosco al mercato. Tre taglie, un prezzo chiaro. Nasce la Spritzeria su misura.</p></div>
+      <div class="yr rv"><div class="y">2019</div><b>Via Enrico Alvino</b><p>Il secondo bancone, sempre al Vomero, a dieci minuti a piedi dal primo.</p></div>
+      <div class="yr rv"><div class="y">2020</div><b>Torino, Via Baretti</b><p>Lo stesso bancone, la stessa formula, a San Salvario.</p></div>
+      <div class="yr rv"><div class="y">2026</div><b>Dieci candeline</b><p>Grazie a voi. Dieci anni di S, M e XXL, e il chiosco di Antignano che oggi divide la piazza con Il Birrafondaio.</p></div>
     </div>
-    <p class="note" style="color:#9FB0CC">Gli anni intermedi sono da confermare con Davide.</p>
-  </div>
+      </div>
 </section>
 
 <section id="tessera">
@@ -626,9 +625,9 @@ document.getElementById("spGo").onclick=()=>{const s=document.getElementById("sp
   const c=document.getElementById("sospN");c.textContent=+c.textContent+1;toast("Appeso alla lavagna. Nel sito vero: pagamento e ricevuta via email.");say("Che gesto. Grazie! 🧡");};
 // locations
 const LOCS=[
- {city:"Napoli · Vomero",n:"Via Enrico Alvino",a:"Via Enrico Alvino 50, 80129 Napoli",t:"Il primo bancone, dal 2016",h:[17,26]},
- {city:"Napoli · Antignano",n:"Largo Antignano",a:"Largo Antignano 1, 80129 Napoli",t:"Il chiosco al mercato, con Il Birrafondaio",h:[17,25]},
- {city:"Torino · San Salvario",n:"Via Baretti",a:"Via Giuseppe Baretti, 10125 Torino · numero civico da confermare",t:"Lo stesso bancone, sotto la Mole",h:[17,26]},
+ {city:"Napoli · Vomero",n:"Via Enrico Alvino",a:"Via Enrico Alvino 50, 80129 Napoli",t:"Il secondo bancone, dal 2019",h:[17,26]},
+ {city:"Napoli · Antignano",n:"Largo Antignano",a:"Largo Antignano 1, 80129 Napoli",t:"Il primo bancone, dal 2016 · con Il Birrafondaio",h:[17,25]},
+ {city:"Torino · San Salvario",n:"Via Baretti",a:"Via Giuseppe Baretti 99bis, 10125 Torino",t:"Dal 2020, a San Salvario",h:[17,26]},
 ];
 const hh=x=>`${String(Math.floor(x%24)).padStart(2,"0")}:${String(Math.round((x%1)*60)).padStart(2,"0")}`;
 const cur0=now.getHours()+now.getMinutes()/60;const cur=cur0<6?cur0+24:cur0;let anyOpen=false;
