@@ -230,6 +230,10 @@ footer a{color:var(--yellow)}
 .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);background:var(--navy);color:#fff;padding:12px 18px;font-weight:700;opacity:0;pointer-events:none;transition:.25s;z-index:60;border-radius:999px;max-width:90vw;text-align:center}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 .draft{position:fixed;left:12px;bottom:12px;z-index:30;background:var(--navy);color:#fff;padding:5px 10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:11px;border-radius:6px}
+.totop{position:fixed;right:16px;bottom:16px;z-index:40;width:52px;height:52px;border-radius:50%;border:3px solid var(--navy);background:var(--red);color:var(--white);display:grid;place-items:center;box-shadow:4px 4px 0 var(--navy);opacity:0;transform:translateY(12px);pointer-events:none;transition:.25s}
+.totop.show{opacity:1;transform:none;pointer-events:auto}
+.totop:hover{background:var(--yellow);color:var(--navy)}
+.totop svg{width:22px;height:22px}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -557,6 +561,7 @@ footer a{color:var(--yellow)}
 </footer>
 <div class="toast" id="toast"></div>
 <div class="draft">Bozza</div>
+<button class="totop" id="totop" aria-label="Torna su"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
 
 <script>
 // scroll reveal (elements are visible at rest; only pre-animate those below the fold)
@@ -615,6 +620,9 @@ document.getElementById("locs").innerHTML=LOCS.map(l=>{const open=cur>=l.h[0]&&c
   return `<div class="loc rv${open?" open":""}"><div class="city">${l.city}</div><h3>${l.n}</h3><div class="addr">${l.a}</div><div style="font-size:14px;color:var(--ink-soft)">${l.t}</div><div class="hrs">Tutti i giorni ${hh(l.h[0])} – ${hh(l.h[1])}</div><button data-toast="Nel sito vero: apre le mappe con il percorso">Indicazioni</button></div>`}).join("");
 const s=document.getElementById("status");s.classList.toggle("closed",!anyOpen);document.getElementById("statusText").textContent=anyOpen?"Aperto ora":"Apriamo alle 17";
 document.querySelectorAll("#locs .rv").forEach(el=>io.observe(el));
+
+// back to top
+(function(){const t=document.getElementById("totop");const on=()=>t.classList.toggle("show",scrollY>700);addEventListener("scroll",on,{passive:true});on();t.onclick=()=>scrollTo({top:0,behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});})();
 let tt;function toast(m){const t=document.getElementById("toast");t.textContent=m;t.classList.add("show");clearTimeout(tt);tt=setTimeout(()=>t.classList.remove("show"),3200);}
 document.querySelectorAll("[data-toast]").forEach(b=>b.onclick=()=>toast(b.dataset.toast));
 document.querySelectorAll("[data-ev]").forEach(b=>b.onclick=()=>toast(`«${b.dataset.ev}» salvato. Nel sito vero: file calendario per iPhone, Google e Outlook.`));
